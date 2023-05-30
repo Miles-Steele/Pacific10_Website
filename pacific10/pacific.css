@@ -1,0 +1,239 @@
+* { box-sizing: border-box; }
+
+h1   	   { 
+	            background-color: #002171;
+		          color: #FFFFFF;	
+              letter-spacing: 0.25em;
+              text-align: center;
+              margin: 0;
+              padding: 0.5em 0 0.5em;
+              font-family: Georgia, Times New Roman, serif;
+	 	     }
+
+h1 a       {
+              font-style: none;
+              text-decoration: none;
+           }
+
+nav  	   { 
+              padding: 0;
+              font-size: 120%;
+	            font-weight: bold;
+              text-align: center; 
+     	   }
+
+nav a      {
+              text-decoration: none;
+           }
+
+nav ul     {
+              list-style-type: none;
+              margin: 0;
+              padding: 1px 20px 20px 0;
+              font-size: 1.2em;
+           }                	 
+
+nav li     {
+              border-bottom: 1px solid #000033;  
+           }
+ 
+h2   	   { 
+	            color: #1976D2;
+              text-shadow: 1px 1px 5px #CCCCCC;
+	            font-family: Georgia, Times New Roman, serif; 
+     	   }
+
+body 	   { 
+	          background-color: #EAEAEA;
+	          color: #555555; 
+     	   }
+
+dt   	   { 
+	          color: #002171; 
+     	   }
+
+h3         {
+              color: #000033;
+              font-family: Georgia, Times New Roman, serif;
+           }
+
+footer     {
+              text-align: center;
+              font-size: 75%;
+              font-style: italic;
+              padding: 2em;
+              background-color: #FFFFFF;
+              font-family: Georgia, Times New Roman, serif;
+           }
+
+main ul    {
+              list-style-image: url(marker.gif);
+           }
+
+main       {
+              padding: 1px 20px 20px 30px;
+              display: block;
+              background-color: #FFFFFF;
+              overflow: auto;
+           }      
+
+a:link     { color: #5C7FA3; }
+h1 a:link    { color: #FFFFFF; }
+
+a:visited  { color: #344873; }           
+h1 a:visited { color:#FFFFFF; }
+
+a:hover    { color: #A52A2A; }
+h1 a:hover   { color: #90C7E3; }
+
+table {
+        border: 2px solid #3399CC;
+        border-collapse: collapse;
+      }
+
+td, th {
+         padding: 0.5em;
+         border: 2px solid #3399CC;
+       }
+
+td {
+     text-align: center;
+   }
+
+tr:nth-of-type(odd) {
+                      background-color: #F5FAFC;
+                    }  
+
+.text {
+        text-align: left;
+      }
+
+.resort    { 
+			        color: #1976D2;
+			        font-weight: bold;
+           } 
+
+.contact   {
+              font-size: 90%; 
+           }
+
+#hero       {
+              background-color: #FFFFFF;
+            }
+
+#homehero  {
+              height: 300px;
+              background-image: url(coast2.jpg);
+              background-size: 100% 100%;
+           }
+
+#yurthero  {
+              height: 300px;
+              background-image: url(yurt.jpg);
+              background-size: 100% 100%;
+           }
+           
+#trailhero {
+              height: 300px;
+              background-image: url(trail.jpg);
+              background-size: 100% 100%;
+           }
+
+form {
+       display: flex;
+       flex-direction: column;
+       flex-wrap: nowrap;
+     }
+
+input, textarea {
+                  margin: 0 0 .5em;
+                }    
+
+@media only screen and (min-width: 600px) {
+                                            nav ul {
+                                                     display: flex;
+                                                     flex-direction: row;
+                                                     flex-wrap: nowrap;
+                                                     justify-content: flex-start;
+                                                     justify-content: flex-end;
+                                                     justify-content: space-between;
+                                                   }
+
+                                            nav li {
+                                                     border-bottom: none;
+                                                   }
+
+                                            section {
+                                                      margin: 0 2em 0 2em;
+                                                      flex: 1;
+                                                    }               
+                                            
+                                            form {
+                                                   width: 60%;
+                                                   max-width: 30em;
+                                                   display: grid;
+                                                   grid-gap: 1em; 
+                                                   grid-template-rows: auto;
+                                                   grid-template-columns: 6em 1fr;
+                                                 }
+
+                                            input[type="submit"] {
+                                                                   width: 9em;
+                                                                   grid-column: 2/3;
+                                                                 }
+
+                                            #wrapper {
+                                                       
+                                                       background-color: #ffffff;
+                                                     }
+
+                                            .flow   {
+                                                      display: flex;
+                                                      flex-direction: row;
+                                                      
+                                                    }
+
+                                          }
+
+@media only screen and (min-width: 1024px) {
+                                             #wrapper {
+                                                        
+                                                        background-color: #ffffff;
+                                                        margin: auto;
+                                                        width: 80%;
+                                                        border: 1px solid #000033;
+                                                        box-shadow: 3px #000033;
+                                                      }
+                                             
+                                             nav      {
+                                                        text-align: left;
+                                                        padding: 0 0 0 1em;
+                                                      }
+
+                                           
+
+@supports (display: grid) {
+                           nav ul {
+                                    display: flex;
+                                    flex-direction: column;
+                                    padding: 1em;
+                                  }
+                            
+                           #wrapper {
+                                      background-image: linear-gradient(to left, #FFFFFF, #90C7E3);
+                                      background-color: #90C7E3;
+                                      display: grid;
+                                      grid-template-columns: 180px 1fr;
+                                      grid-template-areas: 
+                                                           "h1 h1"
+                                                           "nav hero"
+                                                           ". main"
+                                                           ". footer" ;
+                                    }
+                              h1 { grid-area: h1; }
+                              nav { grid-area: nav; }
+                              .hero { grid-area: hero; }
+                              main { grid-area: main; }
+                              footer { grid-area: footer; }
+                          }
+                        }
